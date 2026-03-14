@@ -6,7 +6,7 @@ public class Admin : Employee
 
     public Admin(string name, int age, string pos) : base(name, age)
     {
-        Posada = Posada;
+        Posada = pos;
     }
 
     public override void Show()
