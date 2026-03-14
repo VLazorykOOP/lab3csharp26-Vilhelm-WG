@@ -9,9 +9,6 @@ internal class Program
         {
             Console.WriteLine();
             Console.WriteLine("Lab 1 - меню");
-            Console.WriteLine("5 - Task 5 (Добуток цілих чисел)");
-            Console.WriteLine("4 - Task 4 (Масті)");
-            Console.WriteLine("3 - Task 3 (перевірка належності точки)");
             Console.WriteLine("2 - Task 2 (перевірка парності)");
             Console.WriteLine("1 - Task 1 (відстань між точками)");
             Console.WriteLine("0 - Вихід");
@@ -23,17 +20,7 @@ internal class Program
 
             switch (choice)
             {
-
-                case "4":
-                    Task_4.Run();
-                    break;
-
-                case "3":
-                    Task_3.Run();
-                    break;
-
                 case "2":
-                    Task_2.Run();
                     break;
 
                 case "1":
