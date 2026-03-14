@@ -1,4 +1,5 @@
-﻿namespace Lab3CSharp;
+﻿using Lab3CSharp.task_2;
+namespace Lab3CSharp;
 using System;
 
 internal class Program
@@ -21,6 +22,25 @@ internal class Program
             switch (choice)
             {
                 case "2":
+                        // Створюємо масив базового класу
+                        Employee[] staff = new Employee[]
+                        {
+                            new Engineer("Іван", 35, "Програміст"),
+                            new Worker("Петро", 25, 3),
+                            new Admin("Сидоренко", 45, "Директор"),
+                            new Worker("Василь", 30, 5),
+                            new Engineer("Кузьма", 28, "Електрик")
+                        };
+
+                        Console.WriteLine("--- Співробітники, впорядковані за типом ---");
+    
+                        // Сортування за іменем класу
+                        var sortedStaff = staff.OrderBy(e => e.GetType().Name);
+
+                        foreach (var emp in sortedStaff)
+                        {
+                            emp.Show(); // Викличе потрібний метод залежно від реального типу об'єкта
+                        }
                     break;
 
                 case "1":
