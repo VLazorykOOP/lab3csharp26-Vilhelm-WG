@@ -1,4 +1,4 @@
-﻿using Lab3CSharp.task_2;
+using Lab3CSharp.task_2;
 namespace Lab3CSharp;
 using System;
 
@@ -23,14 +23,35 @@ internal class Program
             {
                 case "2":
                         // Створюємо масив базового класу
-                        Employee[] staff = new Employee[]
+                        // Дані для створення об'єктів
+                        Random random = new Random();
+                        string[] names = { "Іван", "Петро", "Андрій", "Олег", "Сергій", "Микола", "Василь", "Юрій" };
+                        string[] specializations = { "Програміст", "Електрик", "Механік", "Будівельник" };
+                        string[] positions = { "Директор", "Менеджер", "Бухгалтер", "Начальник" };
+
+                        Employee[] staff = new Employee[20];
+                        for (int i = 0; i < 20; i++)
                         {
-                            new Engineer("Іван", 35, "Програміст"),
-                            new Worker("Петро", 25, 3),
-                            new Admin("Сидоренко", 45, "Директор"),
-                            new Worker("Василь", 30, 5),
-                            new Engineer("Кузьма", 28, "Електрик")
-                        };
+                            string name = names[random.Next(names.Length)];
+                            int age = random.Next(20, 60);
+    
+                            int type = random.Next(3);
+                            switch (type)
+                            {
+                                case 0: // Engineer
+                                    string spec = specializations[random.Next(specializations.Length)];
+                                    staff[i] = new Engineer(name, age, spec);
+                                    break;
+                                case 1: // Worker
+                                    int rank = random.Next(1, 6);
+                                    staff[i] = new Worker(name, age, rank);
+                                    break;
+                                case 2: // Admin
+                                    string pos = positions[random.Next(positions.Length)];
+                                    staff[i] = new Admin(name, age, pos);
+                                    break;
+                            }
+                        }
 
                         Console.WriteLine("--- Співробітники, впорядковані за типом ---");
     
@@ -41,7 +62,7 @@ internal class Program
                         {
                             emp.Show(); // Викличе потрібний метод залежно від реального типу об'єкта
                         }
-                    break;
+                        break;
 
                 case "1":
                 {
