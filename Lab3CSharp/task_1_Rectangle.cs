@@ -31,4 +31,10 @@ public class task_1_Rectangle
     }
 
     public void PrintSides() => Console.WriteLine($"$ Сторона А: {a}, сторона B: {b}");
+
+    public int Perimetr() => 2 * a + 2 * b;
+
+    public int Area() => a * b;
+
+    public bool IsSquare() => a == b;
 }
