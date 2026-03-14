@@ -1,4 +1,5 @@
 namespace Lab3CSharp;
+using System;
 
 public class task_1_Rectangle
 {
@@ -28,4 +29,6 @@ public class task_1_Rectangle
         b = sideB;
         c = color;
     }
+
+    public void PrintSides() => Console.WriteLine($"$ Сторона А: {a}, сторона B: {b}");
 }
