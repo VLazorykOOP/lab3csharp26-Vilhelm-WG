@@ -25,15 +25,35 @@ internal class Program
 
                 case "1":
                 {
-                    task_1_Rectangle[] rects = new task_1_Rectangle[]
-                    {
-                        new task_1_Rectangle(5, 5, 2),  // Квадрат, колір 2
-                        new task_1_Rectangle(10, 2, 1), // Прямокутник, колір 1
-                        new task_1_Rectangle(4, 4, 1),  // Квадрат, колір 1
-                        new task_1_Rectangle(3, 8, 3)   // Прямокутник, колір 3
-                    };
+                        task_1_Rectangle[] rects = new task_1_Rectangle[]
+                        {
+                            new task_1_Rectangle(5, 5, 2),
+                            new task_1_Rectangle(10, 2, 1),
+                            new task_1_Rectangle(4, 4, 1),
+                            new task_1_Rectangle(3, 8, 3)
+                        };
+
+                        // 1. Визначення кількості квадратів
+                        int squareCount = rects.Count(r => r.IsSquare());
+                        Console.WriteLine($"--- Кількість квадратів: {squareCount} ---\n");
+
+                        // 2. Впорядкування за кольорами
+                        Console.WriteLine("Впорядковано за КОЛЬОРОМ:");
+                        var byColor = rects.OrderBy(r => r.C);
+                        PrintCollection(byColor);
+
+                        // 3. Впорядкування за площею
+                        Console.WriteLine("\nВпорядковано за ПЛОЩЕЮ:");
+                        var byArea = rects.OrderBy(r => r.Area());
+                        PrintCollection(byArea);
+
+                        // 4. Впорядкування за периметром
+                        Console.WriteLine("\nВпорядковано за ПЕРИМЕТРОМ:");
+                        var byPerimeter = rects.OrderBy(r => r.Perimetr());
+                        PrintCollection(byPerimeter);
+
+                        break;
                 }
-                    break;
 
                 case "0":
                     return;
@@ -42,6 +62,13 @@ internal class Program
                     Console.WriteLine("Невірний вибір. Спробуйте ще раз.");
                     break;
             }
+        }
+    }
+    static void PrintCollection(IEnumerable<task_1_Rectangle> collection)
+    {
+        foreach (var r in collection)
+        {
+            Console.WriteLine($"Колір: {r.C, -3} | Площа: {r.Area(), -5} | Периметр: {r.Perimetr(), -5} | Квадрат: {r.IsSquare()}");
         }
     }
 }
