@@ -12,6 +12,6 @@ public class Admin : Employee
     public override void Show()
     {
         base.Show();
-        Console.WriteLine($" | Посада: {Posada}");
+        Console.WriteLine($" | Посада: {Posada, -10}");
     }
 }
