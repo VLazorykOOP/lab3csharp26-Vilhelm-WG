@@ -5,7 +5,7 @@ public class Employee
     protected string Name;
     protected int Age;
 
-    public Employee(int age, string name)
+    public Employee(string name, int age)
     {
         Name = name;
         Age = age;
