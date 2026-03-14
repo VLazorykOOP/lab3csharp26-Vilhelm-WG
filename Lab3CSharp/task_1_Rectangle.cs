@@ -30,7 +30,7 @@ public class task_1_Rectangle
         c = color;
     }
 
-    public void PrintSides() => Console.WriteLine($"$ Сторона А: {a}, сторона B: {b}");
+    public void PrintSides() => Console.WriteLine($" Сторона А: {a}, сторона B: {b}");
 
     public int Perimetr() => 2 * a + 2 * b;
 
