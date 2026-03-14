@@ -13,6 +13,6 @@ public class Employee
 
     public virtual void Show()
     {
-        Console.WriteLine($"Тип: {this.GetType().Name, -8}, Назва: {Name, -10}, Вік: {Age, -3}");
+        Console.WriteLine($"Тип: {this.GetType().Name, -8}, Назва: {Name, -6}, Вік: {Age, -3}");
     }
 }
