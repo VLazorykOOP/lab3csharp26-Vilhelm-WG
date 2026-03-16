@@ -10,8 +10,8 @@ internal class Program
         {
             Console.WriteLine();
             Console.WriteLine("Lab 1 - меню");
-            Console.WriteLine("2 - Task 2 (перевірка парності)");
-            Console.WriteLine("1 - Task 1 (відстань між точками)");
+            Console.WriteLine("2 - Task 2");
+            Console.WriteLine("1 - Task 1");
             Console.WriteLine("0 - Вихід");
             Console.Write("Ваш вибір: ");
 
@@ -28,9 +28,16 @@ internal class Program
                         string[] names = { "Іван", "Петро", "Андрій", "Олег", "Сергій", "Микола", "Василь", "Юрій" };
                         string[] specializations = { "Програміст", "Електрик", "Механік", "Будівельник" };
                         string[] positions = { "Директор", "Менеджер", "Бухгалтер", "Начальник" };
-
-                        Employee[] staff = new Employee[20];
-                        for (int i = 0; i < 20; i++)
+                        int n = 0; 
+                        Console.Write("Введіть кількість обʼєктів: ");
+                        while (!int.TryParse(Console.ReadLine(), out n) || n <= 0)
+                        {
+                            Console.WriteLine("Помилка: розмірність має бути додатним числом.");
+                            Console.Write("Введіть кількість обʼєктів: ");
+                        }
+                    
+                        Employee[] staff = new Employee[n];
+                        for (int i = 0; i < n; i++)
                         {
                             string name = names[random.Next(names.Length)];
                             int age = random.Next(20, 60);
